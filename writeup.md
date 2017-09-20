@@ -30,7 +30,7 @@ The goals / steps of this project are the following:
 [image9]: ./output_images/Undistorted-Thresholded-Warped.png "Undistorted-Thresholded-Warped"
 [image10]: ./output_images/lanePixels.png "LanePixelswithBoundaries"
 [image11]: ./output_images/laneDrawn.png "LaneMarked"
-[image11]: ./output_images/MarkedRC "Radius Of Curvature and Distance from Center"
+[image12]: ./output_images/MarkedRC "Radius Of Curvature and Distance from Center"
 [video1]: ./result.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -157,3 +157,5 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 
 My current approach runs the sliding window algorithm for each frame of the video and does not pick up the points determined from the previous frame. I tried to follow the approach as described in the class where we save the previous leftfit and right fit values in Line class and use the function UsingLastFitData. But I could not capitalize on it and my approach failed and main reason for failure was with saving the fit values, I was trying to average out the values and this was leading to detection of lane lines at the center of the road in between the lane lines (i.e. middle of nowhere). I dont necessarily understand the proper reason for this but my theory says its because of the averaging done but then I could not think of any other approach. 
 Next challenge was to deal with varying lighting conditions, but then using the LChannel and SChannel helped. To think about different color spaces was the key. The white lines were detected with the L channel but there might be problems when white line would not contrast with rest of image i.e. whenever there is snow fall.
+
+The pipeline does not effectively works whenever there is steep change in lane directions, e.g road is curving right, till now things would be fine and all of a sudden there is steep left curve, the lane boundaries go bit outside of the lanes which I believe is not that bad but yeah can be improved. One probable solution would be to average out the fits or include a confidence level threshold for the fits and rejecting them if there is too much deviation.
