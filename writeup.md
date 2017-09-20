@@ -30,7 +30,7 @@ The goals / steps of this project are the following:
 [image9]: ./output_images/Undistorted-Thresholded-Warped.png "Undistorted-Thresholded-Warped"
 [image10]: ./output_images/lanePixels.png "LanePixelswithBoundaries"
 [image11]: ./output_images/laneDrawn.png "LaneMarked"
-[image12]: ./output_images/MarkedRC "Radius Of Curvature and Distance from Center"
+[image12]: ./output_images/MarkedRC.png "Radius Of Curvature and Distance from Center"
 [video1]: ./result.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -139,6 +139,7 @@ I implemented this step in second cell of section "Radius of Curvature and Posit
 ![alt text][image11]
 
 Example with marked Radius of Curvature and Distance from center.
+
 ![alt text][image12]
 ---
 
